@@ -1,5 +1,8 @@
 <? session_start();
 var_dump($_SESSION);
+
+$link = mysqli_connect("host-2", "root", "", "brand");
+
 if(array_key_exists("checkout", $_GET) && $_GET["checkout"] == "true"){
     $cart = [];
     foreach ($_SESSION["goods"] as $good){
@@ -464,6 +467,29 @@ if(array_key_exists("checkout", $_GET) && $_GET["checkout"] == "true"){
     </ul>
 
 </nav>
+
+<?
+ if(key_exists("admin", $_SESSION) && $_SESSION["admin"] == 1){
+     $adminSql = 'SELECT * FROM orders;';
+     $allOrders = mysqli_query($link, $adminSql);
+     while ($row = mysqli_fetch_assoc($allOrders)){
+         $orders[] = $row;
+     }
+     echo "<table>";
+     foreach ($orders as $order) {
+         echo "<tr>";
+         foreach ($order as $element){
+             echo "<td>".$element."</td>";
+         }
+         echo "<td class='accept'>accept</td><td class='decline'>decline</td></tr>";
+     }
+     echo "</table>";
+     echo<<<php
+<p>HELLO</p>
+php;
+
+ }
+?>
 <section class="about-product">
     <div class="about-product-content container">
         <div class="product-category">
