@@ -13,11 +13,10 @@
             success: function (success) {
                 console.log(success);
                 console.log(JSON.parse(success));
-                if(JSON.parse(success).auth){
-                    $(".login-block").empty();
-                    $(".login-block").html(`<span>Hello, ${JSON.parse(success).login}</span>`)
+                if(JSON.parse(success).auth == true){
+                    location.reload();
                 } else {
-                    $(".login-block").html("<p>Incorrect</p>");
+                    $(".login-block").append("<p>Incorrect</p>");
                 }
                 renderError();
             }
@@ -26,12 +25,11 @@
     $('#logout-btn').on('click', function (event) {
         console.log(150);
         $.ajax({
-            url: 'php/login.php',
-            type: 'GET',
+            url: 'php/logout.php',
+            type: 'POST',
             data: 'logout',
             success: function (a) {
-                a.log;
-                //location.reload();
+                location.reload();
             }
         })
     })

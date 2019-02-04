@@ -13,10 +13,12 @@ if(!empty($_POST)){
             $_SESSION['auth'] = true;
             $_SESSION['id'] = $user['id'];
             $_SESSION['login'] = $user['userName'];
-            $json = json_encode(['auth'=> $_SESSION['auth'],'id' => $_SESSION['id'], 'login' => $_SESSION["login"]]);
+            $_SESSION['admin'] = $user['admin'];
+            $json = json_encode(['auth'=> $_SESSION['auth'],'id' => $_SESSION['id'], 'login' => $_SESSION["login"],
+                'admin' => $_SESSION["admin"]]);
             print_r($json);
         }   else {
-            echo "Incorrect login or password";
+            print_r(json_encode('{"error" : "incorrect login or password"}'));
         }
     }   else {
         echo "This login doesn't exist";
