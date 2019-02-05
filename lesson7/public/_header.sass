@@ -1,0 +1,369 @@
+.test-block
+  height: 50px
+  width: 50px
+  background-color: aqua
+.header-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 100%
+
+.header
+  border: 1px solid #ececec
+  box-sizing: border-box
+  background-color: #fff
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17)
+  height: 100px
+  position: relative
+  &__left
+    display: flex
+    align-items: center
+    text-transform: uppercase
+    position: relative
+    .d-letter
+      margin-right: 84px
+    .search-form
+      display: flex
+    .browse
+      cursor: pointer
+      z-index: 2
+      position: absolute
+      top: 6px
+      left: 186px
+      width: 87px
+      box-sizing: border-box
+      padding: 10px 13px 10px 14px
+      color: $dark-text
+      font-size: 14px
+      font-weight: 300
+      text-transform: capitalize
+      border-bottom-left-radius: 3px
+      border-top-left-radius: 3px
+      border-style: solid
+      border-width: 1px
+      border-color: #e6e6e6
+      background: -webkit-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%)
+      background: -moz-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%)
+      background: -o-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%)
+      background: -ms-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%)
+      background: linear-gradient(180deg, #f9f9f9 0%, #f5f5f5 100%)
+    .drop-down
+      z-index: 4
+      background-color: #fff
+      width: 265px
+      padding: 13px
+      border-radius: 5px
+      border: 1px solid $border-color
+      position: absolute
+      top: 37px
+      left: -2px
+      ul
+        list-style: none
+      h3
+        color: #232323
+        font-size: 14px
+        font-weight: 400
+        line-height: 32px
+        text-transform: uppercase
+        border-bottom: 1px solid $border-color
+      a
+        color: #4f4f4f
+        font-size: 14px
+        font-weight: 400
+        line-height: 28px
+        transition: color $transition-duration - 0.1
+      a:hover
+        color: $pink-text
+    input
+      outline: none
+      padding: 10px 5px
+      border: 1px solid $border-color
+      box-sizing: border-box
+      background-color: #fff
+      width: 317px
+      height: 38px
+    button
+      border-bottom-right-radius: 3px
+      border-top-right-radius: 3px
+      border: 1px solid $border-color
+      height: 39px
+      background-color: #fff
+      color: #a4a4a4
+      cursor: pointer
+  &__right
+    position: relative
+    display: flex
+    align-items: center
+    img
+      margin: 7px 26px 0 0
+      padding: 3px
+      border: 1px solid transparent
+    .my-account
+      display: block
+      color: #ffffff
+      font-size: 15px
+      font-weight: 400
+      background-color: #f16d7f
+      padding: 13px 14px 11px 19px
+      text-transform: capitalize
+      text-decoration: none
+      transition-duration: $transition-duration
+    span
+      margin-right: 15px
+    .cart-icon
+      display: block
+.link-logo
+  display: flex
+  align-items: center
+  margin-right: 37px
+.logo
+  color: $dark-text
+  font-size: 27px
+  font-weight: 300
+  text-transform: uppercase
+.d-letter
+  color: $pink-text
+  font-weight: 900
+  font-size: 27px
+  text-transform: uppercase
+  .browse-sum
+    margin-right: 11px
+    outline: none
+  .search-form a
+    transition-duration: $transition-duration
+  .search-form a:hover
+    background: #fff
+
+.cart-hover
+  position: relative
+  &:hover .cart-icon
+    transform: scale(2,2)
+  &:hover .hidden-cart
+    display: block
+.hidden-cart
+  z-index: 1
+  display: none
+  position: absolute
+  top: 58px
+  left: -12px
+  background-color: #fff
+  border-radius: 5px
+  padding: 21px 16px
+  border: 1px solid #e6e6e6
+  min-width: 145px
+  .mega-pointer
+    left: 15px
+.hidden-prod
+  width: 227px
+  justify-content: space-between
+  align-items: center
+  display: flex
+  border-bottom: 1px solid $border-color
+  padding-bottom: 13px
+  img
+    margin-right: 13px
+    padding: 0
+  h5
+    color: $dark-text
+    font-size: 12px
+    font-weight: 700
+    margin-bottom: 10px
+    text-transform: uppercase
+  i
+    display: block
+    height: 15px
+    color: #c0c0c0
+    font-size: 16px
+    font-weight: 400
+    cursor: pointer
+  i:hover
+    color: #000
+.hidden-prod-rating
+  width: 75px
+  display: block
+  margin-right: 49px
+  img
+    margin: 0
+  span
+    display: block
+    margin-top: 12px
+.hidden-cart-price
+  color: $pink-text
+  font-size: 12px
+  font-weight: 400
+  text-transform: uppercase
+.hidden-total
+  width: 227px
+  display: flex
+  justify-content: space-between
+  margin-top: 18px
+  h4
+    color: $dark-text
+    font-size: 16px
+    font-weight: 700
+    text-transform: uppercase
+.hidden-checkout
+  display: flex
+  width: 227px
+  margin-top: 30px
+  padding: 21px 0
+  justify-content: center
+  border: 1px solid #f16d7f
+  color: #f16d7f
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  text-decoration: none
+  transition-duration: $transition-duration
+  &:hover
+    background-color: $pink-text
+    color: #ffffff
+.hidden-goto
+  display: flex
+  width: 227px
+  margin-top: 30px
+  padding: 21px 0
+  justify-content: center
+  border: 1px solid #eaeaea
+  color: #4a4a4a
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  text-decoration: none
+  transition-duration: $transition-duration
+  &:hover
+    background-color: $background-light-grey
+.account:hover .login-block
+  display: block
+.account:hover .my-account
+  background-color: #d05656
+
+.login-block
+  z-index: 2
+  display: none
+  position: absolute
+  left: 65px
+  color: $grey-text
+  background-color: #fff
+  border-radius: 5px
+  padding: 21px 16px
+  border: 1px solid #e6e6e6
+  min-width: 145px
+  .login-input
+    height: 30px
+    padding-left: 7px
+    margin-bottom: 10px
+    margin-top: 5px
+  button
+    display: flex
+    width: 190px
+    margin-top: 30px
+    padding: 12px 0
+    justify-content: center
+    border: 1px solid #f16d7f
+    color: #f16d7f
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    transition-duration: $transition-duration
+    cursor: pointer
+    &:hover
+      background-color: $pink-text
+      color: #ffffff
+
+.menu
+  width: 740px
+  display: flex
+  justify-content: center
+  position: relative
+  z-index: 0
+  .horizontal
+    display: flex
+    justify-content: center
+    list-style: none
+    &__link
+      padding: 13px 20px
+      text-transform: uppercase
+      color: $dark-text
+      font-size: 14px
+      font-weight: 700
+      border-bottom: 3px solid transparent
+      transition-duration: $transition-duration
+      &:hover
+        background-color: #e7e7e7
+  .active-page
+    border-bottom: 3px solid $pink-text
+.mega-hover:hover .mega
+  display: flex
+.mega
+  position: absolute
+  display: none
+  justify-content: space-between
+  left: 430px
+  top: 43px
+  border-radius: 5px
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  padding: 20px
+  transition: height $transition-duration
+  h3
+    color: #232323
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 400
+    padding-bottom: 6px
+    border-bottom: 1px solid #e8e8e8
+  &__block
+    padding: 0 10px
+    width: 257px
+  &__list
+    padding-left: 0
+    list-style: none
+    a
+      color: #646464
+      letter-spacing: 0.35px
+      font-size: 14px
+      font-weight: 400
+    a:hover
+      color: $pink-text
+    li
+      padding-bottom: 10px
+  &__offer
+    display: block
+    height: 118px
+    width: 255px
+    background-image: url("img/mega-menu-img.jpg")
+    float: left
+    &-text
+      margin-top: 63px
+      margin-left: 176px
+      color: #ffffff
+      font-size: 22px
+      font-weight: 400
+      line-height: 28px
+      text-transform: uppercase
+  &-home
+    left: 350px
+  &-women
+    left: 520px
+    .mega-pointer
+      left: 54px
+  &-kids
+    left: 300px
+    .mega-pointer
+      left: 130px
+  &-accesories
+    left: 300px
+    .mega-pointer
+      left: 230px
+.mega-pointer
+  height: 12px
+  width: 12px
+  background-color: #fff
+  position: absolute
+  top: -7px
+  left: 34px
+  transform: rotate(45deg) skewY(-1deg)
+  border-top: 1px solid $border-color
+  border-left: 1px solid $border-color

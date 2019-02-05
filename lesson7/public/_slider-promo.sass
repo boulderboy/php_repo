@@ -1,0 +1,74 @@
+.slider
+  height: 614px
+  background-color: #e8e8e8
+.slider-content
+  height: 100%
+  background: url("img/slider.jpg") 0 -51px
+  .slider-text
+    margin-top: 225px
+    margin-right: 330px
+    float: left
+    border-left: 12px solid $pink-text
+    padding-left: 12px
+    h2
+      font-size: 60px
+      font-weight: 900
+      color: $dark-text
+      text-transform: uppercase
+      line-height: 44px
+      margin-bottom: 15px
+    h4
+      font-size: 40px
+      font-weight: 900
+      color: $dark-text
+      text-transform: uppercase
+      line-height: 30px
+    span
+        color: $pink-text
+
+.promo
+  display: flex
+  justify-content: space-between
+  .promo-block
+    margin-top: 80px
+  &__big
+    display: block
+    height: 542px
+    width: 560px
+    margin-bottom: 20px
+    transition-duration: $transition-duration
+    &:hover
+      opacity: 0.7
+    &-left
+      background-image: url("img/promo-men.jpg")
+    &-right
+      background-image: url("img/promo-boy.jpg")
+  &__mini
+    display: block
+    height: 261px
+    width: 560px
+    margin-bottom: 20px
+    transition-duration: $transition-duration
+    &:hover
+      opacity: 0.7
+    &-left
+      background-image: url("img/promo-wallet.jpg")
+    &-right
+      background-image: url("img/promo-women.jpg")
+  &__text
+    display: inline-block
+    padding: 16px 20px
+    background-color: #fff
+    margin-top: 26px
+    h3
+      color: $dark-text
+      font-size: 18px
+      font-weight: 900
+      text-transform: uppercase
+    h4
+      color: $pink-text
+      text-transform: uppercase
+      font-size: 30px
+      font-weight: 900
+
+
