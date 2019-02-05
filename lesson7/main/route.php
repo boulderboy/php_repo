@@ -1,5 +1,4 @@
 <? session_start();
-var_dump($_SESSION);
 
 include_once ("../main/config.php");
 
