@@ -1,7 +1,7 @@
 <? session_start();
 var_dump($_SESSION);
 
-$link = mysqli_connect("host-2", "root", "", "brand");
+include_once ("../main/config.php");
 
 if(array_key_exists("checkout", $_GET) && $_GET["checkout"] == "true"){
     $cart = [];
@@ -117,6 +117,9 @@ if(array_key_exists("checkout", $_GET) && $_GET["checkout"] == "true"){
                     <?
                     if(array_key_exists('auth',$_SESSION) && $_SESSION['auth'] == true){
                         echo "Hello,".$_SESSION["login"]."<br><button id='logout-btn'>logout</button>";
+                        if (key_exists("admin", $_SESSION) && $_SESSION["admin"] == 1){
+                            echo "<a href='orders.php'>Orders</a>";
+                        }
                     }   else {
                         echo "<form>
                         <p>Login</p>
@@ -468,28 +471,7 @@ if(array_key_exists("checkout", $_GET) && $_GET["checkout"] == "true"){
 
 </nav>
 
-<?
- if(key_exists("admin", $_SESSION) && $_SESSION["admin"] == 1){
-     $adminSql = 'SELECT * FROM orders;';
-     $allOrders = mysqli_query($link, $adminSql);
-     while ($row = mysqli_fetch_assoc($allOrders)){
-         $orders[] = $row;
-     }
-     echo "<table>";
-     foreach ($orders as $order) {
-         echo "<tr>";
-         foreach ($order as $element){
-             echo "<td>".$element."</td>";
-         }
-         echo "<td class='accept'>accept</td><td class='decline'>decline</td></tr>";
-     }
-     echo "</table>";
-     echo<<<php
-<p>HELLO</p>
-php;
 
- }
-?>
 <section class="about-product">
     <div class="about-product-content container">
         <div class="product-category">
