@@ -32,6 +32,10 @@ if(!array_key_exists('isAdmin', $_SESSION) || !$_SESSION['isAdmin'] == 1){
         '{___MSG_}' => getMsg(),
         '{__COUNT}' => (array_key_exists('goods', $_SESSION)) ? count($_SESSION['goods']) : 0,
 	    '{__USER}' => (array_key_exists('user', $_SESSION)) ? 'Привет, '.$_SESSION['user'] : 'Авторизоваться',
+        '{__ACTION}' =>(array_key_exists('user', $_SESSION)) ?
+            "<a href='?page=orders&func=userStory'>История заказов</a>" :
+            "<a href='#'>Регистрация</a>",
+
     ];
 
    echo strtr($template, $newDate);

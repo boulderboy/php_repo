@@ -42,6 +42,7 @@ function auth(){
             $_SESSION['user'] = $row['name'];
             $_SESSION['phone'] = $row['phone'];
             $_SESSION['addr'] = $row['adress'];
+            $_SESSION['userID'] = $row['id'];
         }
     }
     $_SESSION['msg'] = $msg;

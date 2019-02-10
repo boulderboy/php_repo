@@ -109,3 +109,44 @@ function declineOrder () {
         exit;
     }
 }
+
+function userStory() {
+    if(! empty($_SESSION['userID'])){
+        $userID = (int)$_SESSION['userID'];
+        $sql = "SELECT * FROM zakaz WHERE userID = $userID ORDER BY date DESC";
+        $res = mysqli_query(connect(), $sql);
+        $content = '';
+        if($res) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                $content .= "<div style='border-bottom: 1px dotted darkblue'><h3>{$row['date']}</h3><hr>";
+                switch ($row['accepted']){
+                    case 0:
+                        $acception = 'на рассмотрении';
+                        break;
+                    case 1:
+                        $acception = 'одобрен';
+                        break;
+                    case -1:
+                        $acception = 'отменен';
+                        break;
+                }
+                $orderInfo = json_decode($row['info'], true);
+                foreach ($orderInfo as $oneOreder) {
+                    $content .= <<<php
+<p>Название: {$oneOreder['name']}</p><br>
+<p>Количество: {$oneOreder['count']}</p><br>
+<p>Цена: {$oneOreder['price']}</p><br>
+php;
+
+                }
+
+                $content .= "<p>Статус заказа: {$acception}</p></div><br><br>";
+
+
+            };
+            return $content;
+        }
+        $content = 'Нет заказов';
+        return $content;
+    }
+}

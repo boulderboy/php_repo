@@ -86,6 +86,7 @@ CREATE TABLE `zakaz` (
   `info` text NOT NULL,
   `date` varchar(10) DEFAULT NULL,
   `accepted` tinyint(1) NOT NULL DEFAULT '0',
+  `userID` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -96,7 +97,7 @@ CREATE TABLE `zakaz` (
 
 LOCK TABLES `zakaz` WRITE;
 /*!40000 ALTER TABLE `zakaz` DISABLE KEYS */;
-INSERT INTO `zakaz` VALUES (1,'фыв','фыв','фыв','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":1}]','10.10.10',-1),(2,'Фио','+85056564','Мой адрес','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":2},{\"price\":\"230\",\"name\":\"Товар 3\",\"count\":3}]','04.02.19',0),(3,'qwer','vcxzsdf','123','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":2}]','05.02.19',0),(4,'petrov','89167777777','eee','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":1}]','06.02.19',0),(5,'hhhhh','aaaaa','qweasdzxc','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":4},{\"price\":\"230\",\"name\":\"Товар 3\",\"count\":4}]','06.02.19',0),(6,'5555','1234','\'zxcvzx\'','[{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":5}]','06.02.19',-1),(7,'ivanov','11111','asdfzxcv','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":1}]','06.02.19',-1),(8,'sidorov','9999','zzzzzzzz','[{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":5}]','11.1.10',1),(9,'kuzkina','555','mat','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":3},{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":3}]','08.02.19',1);
+INSERT INTO `zakaz` VALUES (1,'фыв','фыв','фыв','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":1}]','10.10.10',-1,NULL),(2,'Фио','+85056564','Мой адрес','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":2},{\"price\":\"230\",\"name\":\"Товар 3\",\"count\":3}]','04.02.19',0,2),(3,'qwer','vcxzsdf','123','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":2}]','05.02.19',0,NULL),(4,'petrov','89167777777','eee','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":1}]','06.02.19',0,NULL),(5,'hhhhh','aaaaa','qweasdzxc','[{\"price\":\"300\",\"name\":\"Товар 2\",\"count\":4},{\"price\":\"230\",\"name\":\"Товар 3\",\"count\":4}]','06.02.19',0,2),(6,'5555','1234','\'zxcvzx\'','[{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":5}]','06.02.19',-1,NULL),(7,'ivanov','11111','asdfzxcv','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":1}]','06.02.19',-1,NULL),(8,'sidorov','9999','zzzzzzzz','[{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":5}]','11.1.10',1,NULL),(9,'kuzkina','555','mat','[{\"price\":\"200\",\"name\":\"Товар 1\",\"count\":3},{\"price\":\"4560\",\"name\":\"Товар 4\",\"count\":3}]','08.02.19',1,NULL);
 /*!40000 ALTER TABLE `zakaz` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -109,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-10 22:40:54
+-- Dump completed on 2019-02-10 23:13:44
